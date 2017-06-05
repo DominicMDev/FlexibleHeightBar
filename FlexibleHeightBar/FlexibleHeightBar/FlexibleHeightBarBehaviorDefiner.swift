@@ -89,7 +89,7 @@ open class FlexibleHeightBarBehaviorDefiner: NSObject, UIScrollViewDelegate {
         - Parameter progress: The progress position that the bar will snap to.
         - Parameter scrollView: The UIScrollView whose offset will be adjusted during the snap.
     */
-    public func snapToProgress(progress: CGFloat, scrollView: UIScrollView) {
+    open func snapToProgress(progress: CGFloat, scrollView: UIScrollView) {
         if let flexHeightBar = flexibleHeightBar {
             let deltaProgress = progress - flexHeightBar.progress
             let deltaYOffset = (flexHeightBar.maximumBarHeight - flexHeightBar.minimumBarHeight) * deltaProgress
@@ -107,7 +107,7 @@ open class FlexibleHeightBarBehaviorDefiner: NSObject, UIScrollViewDelegate {
     
         - Parameter scrollView: The UIScrollView whose offset will be adjusted during the snap.
     */
-    public func snap(with scrollView: UIScrollView) {
+    open func snap(with scrollView: UIScrollView) {
         if let flexHeightBar = flexibleHeightBar {
             if !currentlySnapping && snappingEnabled && flexHeightBar.progress >= 0 {
                 

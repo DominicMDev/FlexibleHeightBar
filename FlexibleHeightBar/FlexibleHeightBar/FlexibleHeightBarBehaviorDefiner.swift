@@ -98,8 +98,6 @@ open class FlexibleHeightBarBehaviorDefiner: NSObject, UIScrollViewDelegate {
             flexHeightBar.progress = progress
             flexHeightBar.setNeedsLayout()
             flexHeightBar.layoutIfNeeded()
-            
-            currentlySnapping = false
         }
     }
     /**
@@ -107,7 +105,7 @@ open class FlexibleHeightBarBehaviorDefiner: NSObject, UIScrollViewDelegate {
     
         - Parameter scrollView: The UIScrollView whose offset will be adjusted during the snap.
     */
-    open func snap(with scrollView: UIScrollView) {
+    public func snap(with scrollView: UIScrollView) {
         if let flexHeightBar = flexibleHeightBar {
             if !currentlySnapping && snappingEnabled && flexHeightBar.progress >= 0 {
                 

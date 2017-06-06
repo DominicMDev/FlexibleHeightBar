@@ -39,7 +39,9 @@ open class FlexibleHeightBar: UIView {
         }
         return false
     }
-    
+  
+    public var enabled: Bool = true
+  
     /// The non-negative maximum height for the bar. The default value is **44.0**.
     public var maximumBarHeight: CGFloat {
         get {
@@ -71,14 +73,16 @@ open class FlexibleHeightBar: UIView {
             return _progress
         }
         set (newProgress) {
-            _progress = fmin(newProgress, 1.0)
-            
-            if let bhvrDefr = behaviorDefiner {
-                if !bhvrDefr.elasticMaximumHeightAtTop {
+            if enabled {
+                _progress = fmin(newProgress, 1.0)
+                
+                if let bhvrDefr = behaviorDefiner {
+                    if !bhvrDefr.elasticMaximumHeightAtTop {
+                        _progress = fmax(_progress, 0.0)
+                    }
+                } else {
                     _progress = fmax(_progress, 0.0)
                 }
-            } else {
-                _progress = fmax(_progress, 0.0)
             }
         }
     }
@@ -172,22 +176,24 @@ open class FlexibleHeightBar: UIView {
     
     override open func layoutSubviews() {
         super.layoutSubviews()
-        
-        // Update height
-        if useAutoLayout {
-            applyConstraintConstants()
-            heightConstraint!.constant = interpolate(from: maximumBarHeight, to: minimumBarHeight, withProgress: progress)
-        } else {
-            var barFrame = frame
-            barFrame.size.height = interpolate(from: maximumBarHeight, to: minimumBarHeight, withProgress: progress)
-            frame = barFrame
+      
+        if enabled {
+            // Update height
+            if useAutoLayout {
+                applyConstraintConstants()
+                heightConstraint!.constant = interpolate(from: maximumBarHeight, to: minimumBarHeight, withProgress: progress)
+            } else {
+                var barFrame = frame
+                barFrame.size.height = interpolate(from: maximumBarHeight, to: minimumBarHeight, withProgress: progress)
+                frame = barFrame
+            }
+            
+            if let bhvrDefr = behaviorDefiner, !bhvrDefr.elasticMaximumHeightAtTop {
+                progress = fmax(self.progress, 0.0)
+            }
+            
+            applyLayoutAttributes()
         }
-        
-        if let bhvrDefr = behaviorDefiner, !bhvrDefr.elasticMaximumHeightAtTop {
-            progress = fmax(self.progress, 0.0)
-        }
-        
-        applyLayoutAttributes()
     }
     
     /**

@@ -30,7 +30,7 @@ open class FlexibleHeightBarBehaviorDefiner: NSObject, UIScrollViewDelegate {
     /// Determines whether snapping is enabled or not. Default value is YES.
     public var snappingEnabled = true
     /// Determines whether the bar is current snapping or not.
-    public private(set) var currentlySnapping = false
+    public var currentlySnapping = false
     /// Determines whether the bar can stretch to larger sizes than it's maximumBarHeight. Default value is NO.
     public var elasticMaximumHeightAtTop = false
     private var snappingPositionsForProgressRanges = [NSValue: NSNumber]()

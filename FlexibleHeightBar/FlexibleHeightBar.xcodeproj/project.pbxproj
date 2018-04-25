@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6D44DC620914C3700773B89 /* FlexibleHeightBar.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B6D44DC520914C3700773B89 /* FlexibleHeightBar.podspec */; };
 		BA82C8321E24D42500B8D97F /* FacebookBarBehaviorDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82C8301E24D42500B8D97F /* FacebookBarBehaviorDefiner.swift */; };
 		BA82C8331E24D42500B8D97F /* SquareCashBarBehaviorDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82C8311E24D42500B8D97F /* SquareCashBarBehaviorDefiner.swift */; };
 		BA82C8371E24DCB200B8D97F /* TableViewDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82C8361E24DCB200B8D97F /* TableViewDelegateHandler.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6D44DC520914C3700773B89 /* FlexibleHeightBar.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FlexibleHeightBar.podspec; path = ../FlexibleHeightBar.podspec; sourceTree = SOURCE_ROOT; };
 		BA82C8301E24D42500B8D97F /* FacebookBarBehaviorDefiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookBarBehaviorDefiner.swift; sourceTree = "<group>"; };
 		BA82C8311E24D42500B8D97F /* SquareCashBarBehaviorDefiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCashBarBehaviorDefiner.swift; sourceTree = "<group>"; };
 		BA82C8361E24DCB200B8D97F /* TableViewDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDelegateHandler.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				BAC765671E21B12600B1AF2C /* FlexibleHeightBarTests.swift */,
 				BAC765691E21B12600B1AF2C /* Info.plist */,
+				B6D44DC520914C3700773B89 /* FlexibleHeightBar.podspec */,
 			);
 			path = FlexibleHeightBarTests;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D44DC620914C3700773B89 /* FlexibleHeightBar.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

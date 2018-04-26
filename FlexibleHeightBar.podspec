@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
   s.source            = { :git => "https://github.com/DominicMDev/FlexibleHeightBar.git", :tag => s.version }
   s.requires_arc      = true
-  s.source_files      = 'FlexibleHeightBar/*.swift'
+  s.source_files      = 'FlexibleHeightBar/FlexibleHeightBar/*.swift'
 end
